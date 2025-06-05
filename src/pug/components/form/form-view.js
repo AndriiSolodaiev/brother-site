@@ -58,6 +58,9 @@ const renderForm = (form, elements, toast) => {
         field.inputWrapper.removeSelectedStyle();
       });
       elementsParamFn.$form.reset();
+      document.querySelector('[name="rooms"]').value="";
+      document.querySelector('[name="features"]').value="";
+      document.querySelector('[name="for-whom"]').value="";
       elementsParamFn.$btnSubmit.setAttribute('disabled', false);
       elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
         'send',

@@ -59,7 +59,10 @@ padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-
+    padding-bottom: 32px;
+    @include tablet {
+      padding-bottom: 0px;
+    }
     li {
       padding-bottom: 16px;
       border-bottom: 1px solid rgba(249, 242, 235, 0.10);
@@ -79,7 +82,13 @@ padding-bottom: 20px;
         gap: 12px;
         justify-content: space-between;
       }
-      
+      .socials-wrap {
+        display: flex;
+        gap: 24px;
+        @include tablet {
+          gap: 32px;
+        }
+      }
       @include tablet {
         padding-bottom: 20px;
 

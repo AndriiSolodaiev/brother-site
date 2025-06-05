@@ -20,9 +20,11 @@ export const initSmoothScrolling = () => {
   lenis.on('scroll', () => ScrollTrigger.update());
   window.lenis = lenis;
   window.addEventListener('stop-scroll', () => {
+    document.body.style.overflow = "hidden";
     lenis.stop();
   });
   window.addEventListener('start-scroll', () => {
+    document.body.style.overflow = "visible";
     lenis.start();
   });
 

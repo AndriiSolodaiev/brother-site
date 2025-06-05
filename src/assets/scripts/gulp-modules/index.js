@@ -71,7 +71,8 @@ const swiperSlidePhotos = new Swiper('.swiper-slide-photos', {
     },
   },
 });
-const startPos = window.innerWidth > 768 ? 'top top+=80px' : 'top +=160px';
+if(window.innerWidth > 768 ){
+const startPos = 'top +=68px';
 gsap.timeline({
   scrollTrigger: {
     trigger: '.slide-photos',
@@ -84,7 +85,7 @@ gsap.timeline({
       swiperSlidePhotos.setProgress(self.progress);
     },
   },
-});
+});}
 
 const swiperAdvantagesCtrls = new Swiper('.swiper-advantages-ctrls', {
   speed: 600,
@@ -103,16 +104,18 @@ const swiperAdvantagesCtrls = new Swiper('.swiper-advantages-ctrls', {
   },
 });
 
-gsap.to('body', {
-  backgroundColor: '#0476D9',
-  ease: 'none',
-
-  scrollTrigger: {
-    trigger: '.advantages',
-    start: 'top center', // коли верх секції доходить до центру екрану
-    toggleActions: 'play reverse play reverse',
-  },
-});
+const tlColorBG = gsap.timeline({scrollTrigger: {
+  trigger: '.advantages',
+  start: 'top center',
+  end: 'bottom center', // коли верх секції доходить до центру екрану
+  toggleActions: 'play reverse play reverse',
+}})
+tlColorBG.to('.page__content', {
+  backgroundColor: '#3F4CAA',
+  ease: 'none', 
+}).fromTo(".advantages__title", {color:"#292925" }, {
+  color: "#F9F2EB"
+}, "<");
 
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.swiper-advantages-ctrls .swiper-slide');
@@ -272,7 +275,7 @@ const swiperGallery = new Swiper('.swiper-gallery', {
   modules: [Navigation],
   speed: 600,
   slidesPerView: 1,
-  spaceBetween: 32,
+  spaceBetween: 20,
   navigation: {
     prevEl: '[data-gallery-btn-prev]',
     nextEl: '[data-gallery-btn-next]',
@@ -285,7 +288,39 @@ const swiperGallery = new Swiper('.swiper-gallery', {
       slidesPerView: 4,
     },
   },
+ 
+  on: {
+    init(swiper) {
+      handleNavVisibility(swiper);
+    },
+    resize(swiper) {
+      handleNavVisibility(swiper);
+    },
+  },
 });
+
+function handleNavVisibility(swiper) {
+  const btnsWrap = document.querySelector('.gallery .swiper-btns-wrap');
+  if (!btnsWrap) return;
+
+  // Підрахунок лише реальних слайдів (без дублікатів)
+  const realSlideCount = swiper.slides.length - swiper.loopedSlides * 2 || swiper.slides.length;
+
+  const currentSlidesPerView = swiper.params.slidesPerView;
+
+  // Якщо slidesPerView — 'auto', треба брати swiper.slidesPerViewDynamic()
+  const slidesToCheck = currentSlidesPerView === 'auto'
+    ? swiper.slidesPerViewDynamic()
+    : currentSlidesPerView;
+
+  if (realSlideCount <= slidesToCheck) {
+    
+    btnsWrap.classList.add('hidden');
+  } else {
+    btnsWrap.classList.remove('hidden');
+  }
+}
+
 
 // Контрл-свайпер
 const swiperGalleryCtrls = new Swiper('.swiper-gallery-ctrls', {
@@ -451,4 +486,47 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+
+ const groups = [
+        { wrapperSelector: '[data-field-rooms]', hiddenInputName: 'rooms' },
+        { wrapperSelector: '[data-field-features]', hiddenInputName: 'features' }
+    ];
+
+    groups.forEach(group => {
+        const wrapper = document.querySelector(group.wrapperSelector);
+        if (!wrapper) return;
+
+        const checkboxes = wrapper.querySelectorAll('input[type="checkbox"]');
+        const hiddenInput = document.querySelector(`input[name="${group.hiddenInputName}"]`);
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const selectedValues = Array.from(checkboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+                hiddenInput.value = selectedValues.join(', ');
+            });
+        });
+    });
+
+const radioButtons = document.querySelectorAll('input[type="radio"][name="option"]');
+    const hiddenInput = document.querySelector('input[type="hidden"][name="for-whom"]');
+
+    if (!hiddenInput || radioButtons.length === 0) return;
+
+    // Записати значення вибраного за замовчуванням
+    const checked = document.querySelector('input[type="radio"][name="option"]:checked');
+    if (checked) {
+        hiddenInput.value = checked.value;
+    }
+
+    // Оновлювати при зміні
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                hiddenInput.value = radio.value;
+            }
+        });
+    });
 });

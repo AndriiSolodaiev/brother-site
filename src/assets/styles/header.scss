@@ -177,24 +177,31 @@ height: 16px;
   left: 0;
   transition: all 0.3s ease-in-out;
   background-color: rgba(41, 41, 37, 0.8);
-  padding-top: 80px;
-  padding-left: 16px;
+  padding-top: 76px;
+  padding-left: 12px;
+  padding-right: 12px;
   &.hidden {
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
   }
+  @include tablet {
+    padding-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .menu-container {
+
   background-color: $bc;
-overflow: hidden;
-border-radius: 8px;
-border: 1px solid rgba(249, 242, 235, 0.10);
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(249, 242, 235, 0.10);
   padding: 16px;
   transition: max-height 0.5s ease-in-out;
   max-height: 600px;
-  width: calc(100% - 32px);
+  width: 100%;
   @include tablet {
     width: 37vw;
     max-height: 400px;

@@ -40,7 +40,7 @@ document.body.addEventListener('click', function(evt) {
     } else {
       window.dispatchEvent(new Event('stop-scroll'));
     }
-    menuAnimation();
+    // menuAnimation();
     return;
   }
   if (evt.target === menuOverlay) {

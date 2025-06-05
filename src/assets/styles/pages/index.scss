@@ -43,9 +43,9 @@ overflow: visible;
   @include tablet {
     padding-bottom: 126px;
   }
-  @include laptop {
-    padding-bottom: 76px;
-  }
+  // @include laptop {
+  //   padding-bottom: 76px;
+  // }
   h1 {
     opacity: 0;
     pointer-events: none;
@@ -122,7 +122,7 @@ overflow: visible;
   background: $bg-color;
   border-radius: 12px;
   padding: 16px;
-  width: calc(100% - 32px);
+  width: calc(100% - 24px);
   @include tablet {
     display: flex;
     flex-direction: column;
@@ -182,21 +182,26 @@ overflow: visible;
 .info-block {
   
   border-bottom: 1px solid $border-color;
-
-
+  padding: 12px 0;
+  &:first-child{
+    border-top: 1px solid $border-color;
+  }
   &:last-child {
     border: none;
+    padding-bottom: 0;
   }
 
   @include tablet {
     border: none;
     
-    width: 37%;
-
+    width: 360px;
+    padding:  0;
     &:nth-child(2) {
-      width: 36%;
+      width: 360px;
     }
-
+    &:first-child{
+      border-top:none;
+    }
     &:last-child {
       border: none;
       width: 360px;
@@ -479,6 +484,9 @@ overflow: visible;
   @include tablet {
     margin-bottom: 116px;
   }
+  @include laptop {
+    margin-bottom: 200px;
+  }
 }
 
 .planning-card {
@@ -651,8 +659,10 @@ transform: translateY(-50%);
 //Slide-photos sction
 
 .slide-photos {
-  height: 200vh;
-
+ 
+  @include tablet {
+    height: 200vh;
+  }
   // &__wrap {
   //   height: 200vh;
   // }
@@ -669,7 +679,7 @@ transform: translateY(-50%);
     padding: 32px 0;
 
     @include tablet {
-      min-height: 90vh;
+      min-height: 95vh;
       padding: 64px 0 96px 0;
       border-radius: 12px;
     }
@@ -678,7 +688,7 @@ transform: translateY(-50%);
   &__title {
     @include subtitle-text;
     margin-bottom: 32px;
-    width: 100%;
+    width: calc(100% - 24px);
     padding-left: 20px;
     color: $wc;
     font-weight: 400;
@@ -752,11 +762,11 @@ transform: translateY(-50%);
 
 .advantages {
   min-height: 100vh;
-  padding-top: 32px;
+  padding-top: 72px;
   padding-bottom: 32px;
 
   @include tablet {
-    padding-top: 64px;
+    padding-top: 160px;
     padding-bottom: 64px;
   }
 
@@ -845,10 +855,11 @@ border: 1px solid rgba(249, 242, 235, 0.20);
 
 .advantages-content {
   margin-bottom: 16px;
-  overflow: hidden;
+  
   min-height: 45vh;
 
   @include tablet {
+    overflow: hidden;
     margin-bottom: 48px;
   }
 }
@@ -1050,7 +1061,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
 }
 
 .params {
-  padding-top: 32px;
+  padding-top: 72px;
   // padding-bottom: 32px;
 
   @include tablet {
@@ -1132,7 +1143,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
 }
 
 .parking {
-  padding-top: 32px;
+  padding-top: 72px;
   padding-bottom: 36px;
   // height: 200vh;
   position: relative;
@@ -1333,7 +1344,14 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     padding-bottom: 80px;
   }
 
-  ;
+  .swiper-btns-wrap{
+    transition: all 0.3s ease-in-out;
+    &.hidden {
+      opacity: 0;
+      margin: 0;
+      max-height: 0;
+    }
+  }
 
   .swiper-btns-wrap,
   .swiper-button-prev,
@@ -1551,12 +1569,15 @@ border: 1px solid rgba(41, 41, 37, 0.20);
 }
 
 .swiper-scrollbar {
+  position: relative !important;
   background-color: transparent;
-  bottom: -15px !important;
-  padding-top: 20px;
-
+ left: 0 !important; 
+  margin-top: 12px;
+  // margin-bottom: 8px;
+  @include tablet {
+    margin-top: 16px;
+  }
 }
-
 .swiper-scrollbar-drag {
   background-color: rgba(249, 242, 235, 0.314);
   height: 4px;
@@ -1565,11 +1586,11 @@ border: 1px solid rgba(41, 41, 37, 0.20);
 
 .terms {
   padding-top: 36px;
-  padding-bottom: 36px;
+  padding-bottom:72px;
 
   @include tablet {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 160px;
   }
 
   .general-btn {
@@ -1588,7 +1609,7 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     @include tablet {
       margin-bottom: 64px;
       display: flex;
-      align-items: flex-end;
+      align-items: baseline;
       gap: 40px;
 
     }
@@ -1944,5 +1965,55 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     svg {
       margin-right: 8px;
     }
+  }
+}
+
+.news{
+  .gallery-title {
+    margin-bottom: 32px;
+    @include tablet {
+      margin-bottom: 64px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+@include tablet {
+      flex-direction: row;
+      column-gap: 20px;
+      flex-wrap: wrap;
+
+    }
+  }
+  &__link{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(41, 41, 37, 0.10);
+    @include tablet {
+      gap: 16px;
+      padding-bottom: 20px;
+      width: calc((100% - 20px) / 2 );
+      &:hover, &:focus {
+        .news__title {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__data{
+    @include tiny-text;
+    line-height: 177%;
+  } 
+
+  &__title {
+    @include block-subtitle;
+    @include tablet {
+      font-size: 2.11vw;
+      transition: text-decoration 0.3s ease-in-out;
+    } 
   }
 }
