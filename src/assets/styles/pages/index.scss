@@ -1019,12 +1019,13 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   }
 }
 
-.advantage-panel[data-id="safety"] .media-part {
+.advantage-panel[data-id="safety"] .media-part,.advantage-panel[data-id="activities"] .media-part {
   aspect-ratio: 0;
 }
 
 .swiper-safety {
   width: 100%;
+  
 
   @include tablet {
     width: 50%;
@@ -1060,6 +1061,42 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   }
 }
 
+.swiper-activity {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // @include tablet {
+  //   width: 50%;
+  //   margin-left: auto;
+  // }
+  .swiper-wrapper {
+    height:fit-content;
+  }
+  .swiper-btns-wrap {
+    width: 100%;
+    margin-top: 16px;
+    
+    border-color: #3691E1;
+    border-radius: 8px;
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 100%;
+      border-color: #3691E1;
+      background-color:  #1E84DD;
+      &.swiper-button-disabled svg{
+        opacity: 0.5
+      }
+      &:hover, &:focus {
+        background-color:  $wc;
+        svg path {
+          fill: $bc;
+        }
+      }
+    }
+  }
+
+  
+}
 .params {
   padding-top: 72px;
   // padding-bottom: 32px;
@@ -1439,7 +1476,185 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     margin-bottom: 20px;
   }
 }
+//progress
+.progress-title {
+  @include title-text;
+  margin-bottom: 34px;
 
+  @include tablet {
+    margin-bottom: 45px;
+  }
+}
+
+.progress {
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  @include tablet {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  ;
+  .swiper-btns-wrap{
+    &.hidden {
+      opacity: 0;
+    }
+  }
+  .swiper-btns-wrap,
+  .swiper-button-prev,
+  .swiper-button-next {
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.swiper-progress-queue-ctrls, .swiper-progress-month-ctrls {
+   position: relative;
+  
+  margin-bottom: 32px;
+
+  @include tablet {
+    margin-bottom: 64px;
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: #29292557;
+  }
+
+  .swiper-slide {
+    width: fit-content;
+    @include tiny-text;
+    position: relative;
+    color: $bc;
+    padding-bottom: 20px;
+    cursor: pointer;
+    padding: 16px;
+    transition: all 0.3s ease-in-out;
+border-radius: 4px;
+border: 1px solid rgba(41, 41, 37, 0.20);
+    &.active-slide {
+      background-color: $bc;
+      color: $wc;
+
+
+
+      // &::after {
+      //   content: "";
+      //   background-color: $bc;
+      //   position: absolute;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 2px;
+
+      // }
+    }
+
+    @include tablet {
+     
+
+      &:hover {
+        background: rgba(41, 41, 37, 0.10);
+      }
+      &.active-slide:hover {
+        background: rgba(41, 41, 37);
+      }
+    }
+  }
+
+
+
+}
+
+.swiper-progress-gallery {
+  margin-bottom: 16px;
+
+  .swiper-slide {
+    aspect-ratio: 1 / 1.21;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+}
+
+.queue-dates {
+  padding: 16px;
+  border-radius: 8px;
+background: #4D4636;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  .date-wrap {
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f9f2eb36;
+  }
+  .date-title{
+    @include tiny-text;
+    color: $wc;
+    margin-bottom: 8px;
+  }
+  .date-value {
+    @include general-text-bold;
+    color: $wc;
+  }
+  @include tablet {
+    padding: 20px;
+    flex-direction: row;
+    gap: 20px;
+    .date-wrap {
+      width: calc(50% - 10px);
+    }
+  }
+}
+.swiper-progress-percents {
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 20px;
+  }
+  .swiper-slide {
+    border-radius: 8px;
+border: 1px solid rgba(41, 41, 37, 0.10);
+background: var(--White, #F9F2EB);
+padding: 16px;
+display: flex;
+  flex-direction: column;
+  height: auto ;    
+    .percents-title {
+      @include tiny-text;
+      margin-bottom: 4px;
+    }
+    .percent-value {
+      margin-top: auto;
+      color: $bc;
+font-size: 48px;
+font-weight: 700;
+margin-bottom: 16px;
+    }
+    .percent-line{
+      height: 4px;
+      background: rgba(41, 41, 37, 0.10);
+      width: 100%;
+
+    }
+    .percent-fill{
+      height: 100%;
+      background-color: $second-accent-color;
+    }
+  }
+}
 //terms START
 .swiper-riel {
   position: relative;

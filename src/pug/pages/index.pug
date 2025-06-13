@@ -539,18 +539,59 @@ block content
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
         </svg>
-  //- section.progress 
-  //-   h2.progress-title Слідкуйте 
-  //-     br
-  //-     | за процесом будівництва
-  //-   .swiper-progress-queue-ctrls
-  //-     .swiper-wrapper
-  //-       .swiper-slide.active-slide(data-id="territory") Територія
-  //-       .swiper-slide(data-id="children") Для дітей
-  //-       .swiper-slide(data-id="art") Арт обʼєкти
-  //-       .swiper-slide(data-id="hall") Хол
-  //-       .swiper-slide(data-id="floor") Житловий поверх
-  //-   .progress-content
+  section.progress.container
+    h2.progress-title.text-anim Слідкуйте 
+      br
+      | за процесом будівництва
+
+    //- Контрол черг — JS динамічно вставляє .swiper-slide по JSON
+    .swiper-progress-queue-ctrls
+      .swiper-wrapper
+        //- JS рендерить тут черги (черга 1, 2, 3...)
+      .ctrls-line 
+      .swiper-scrollbar
+    //- Контент черги
+    .progress-queue-content
+
+      //- Блок дат
+      .queue-dates
+        .date-wrap
+          h3.date-title Дата оновлення
+          p.date-value
+        .date-wrap
+          h3.date-title Дата завершення
+          p.date-value
+      .progress-percents
+        .swiper-progress-percents
+          .swiper-wrapper
+            //- JS вставляє тут плашки з прогресом
+        .swiper-btns-wrap
+          .swiper-button-prev(data-percents-btn-prev)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+          .swiper-button-next(data-percents-btn-next)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+      //- Контрол місяців — також динамічно рендериться
+      .swiper-progress-month-ctrls
+        .swiper-wrapper
+        .ctrls-line 
+        .swiper-scrollbar
+          //- JS вставляє сюди список місяців
+
+      //- Галерея
+      .progress-gallery
+        .swiper-progress-gallery
+          .swiper-wrapper
+            //- JS вставляє слайди з картинками
+        .swiper-btns-wrap
+          .swiper-button-prev(data-progress-gallery-btn-prev)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+          .swiper-button-next(data-progress-gallery-btn-next)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+
   section.terms.container(id="terms")
     .terms__title__wrap 
       h2.terms__title.active.text-anim(data-id="terms") Умови оплати
