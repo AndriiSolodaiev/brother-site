@@ -1,5 +1,5 @@
 export default function mapStyle() {
-  return [
+  return (
     [
       {
         elementType: 'geometry',
@@ -284,6 +284,6 @@ export default function mapStyle() {
           },
         ],
       },
-    ],
-  ];
+    ]
+  );
 }
