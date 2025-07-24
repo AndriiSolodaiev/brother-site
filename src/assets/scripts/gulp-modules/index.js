@@ -898,3 +898,36 @@ const radioButtons = document.querySelectorAll('input[type="radio"][name="option
 //     }
 //   });
 // }
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('loadIframeButton')) {
+    document.getElementById('loadIframeButton').addEventListener('click', function() {
+      let iframe = document.getElementById('lazyIframe');
+      iframe.src = iframe.getAttribute('data-src');
+      iframe.style.display = 'block';
+
+      this.style.display = 'none';
+      document.querySelector('.iframe-container').classList.add('active-iframe');
+    });
+  }
+
+  const video = document.querySelector('.video');
+  const playBtn = document.querySelector('.play-btn');
+
+  if (video && playBtn) {
+    playBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playBtn.classList.add('is-hidden'); // сховати кнопку при відтворенні
+      } else {
+        video.pause();
+        playBtn.classList.remove('is-hidden'); // показати кнопку при паузі
+      }
+    });
+
+    // Показувати кнопку знову після завершення відео
+    video.addEventListener('ended', () => {
+      playBtn.classList.remove('is-hidden');
+    });
+  }
+});

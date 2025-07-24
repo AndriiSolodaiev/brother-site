@@ -489,6 +489,18 @@ block content
   section.filler
     img(src="./assets/images/filler.jpg", alt="filler")      
     +svg("sister-filler")
+
+  section.params.container.section_view
+    <h2 class="view__title section_view__title ">
+      <span class="br-mobile-hide chars-anim">Як може виглядати ваше <br>життя в Brother</span>
+      <span class="br-mobile-show chars-anim">Як може виглядати <br>ваше життя <br>в Brother</span> 
+    </h2>
+    .section_view__wrapper
+      .section_view__inside_wrapper
+        button(id="loadIframeButton") Завантажити тур
+        div(class="iframe-container" id="iframeWrapper")
+            img(src="../../assets/images/view/2.png")
+            iframe(id="lazyIframe" loading="lazy" allowfullscreen data-src=" https://v3.vrnet.io/?lscene=ua/riel/brother/ext")
   section.parking.container(id="parking")
     .parking__sticky-wrapper
       .parking-card 

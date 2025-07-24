@@ -2232,3 +2232,116 @@ margin-bottom: 16px;
     } 
   }
 }
+
+.section_view {
+  background-color: rgb(63, 76, 170);
+  .br-mobile-show {
+    display: none;
+  }
+  .br-mobile-hide {
+    display: inline;
+  }
+  &__title {
+    padding: 0;
+    color: rgb(249, 242, 235) !important;
+  }
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+  }
+
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .iframe-container img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .iframe-container.active-iframe img {
+    display: none;
+  }
+
+  .iframe-container::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .iframe-container.active-iframe::after {
+    display: none;
+  }
+
+  &__inside_wrapper button {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(234, 99, 58);
+    color: rgb(41, 41, 37);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__inside_wrapper button:hover {
+    color: rgb(249, 242, 235);
+  }
+
+  &__inside_wrapper {
+    position: relative;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+    padding-bottom: max(40px, 3.125vw);
+  }
+  &__title {
+    color: white;
+  }
+  &__subtitle {
+    color: white;
+  }
+}
+
+@media (max-width: 420px) {
+  .section_view {
+    .br-mobile-show {
+      display: inline;
+    }
+    .br-mobile-hide {
+      display: none;
+    }
+  }
+}
