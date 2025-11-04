@@ -24,7 +24,7 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
   script(defer src='./assets/scripts/footer.bundle.js')
-  script(defer src='./assets/scripts/new-page.bundle.js')
+  script(defer src='./assets/scripts/new_page.bundle.js') 
 
 block content
   section.concept_section 
@@ -95,6 +95,59 @@ block content
 
       img(src="../../assets/images/new-page/summary-section/summary-decor-1.png", alt="").summary-decor-1
       img(src="../../assets/images/new-page/summary-section/summary-decor-2.png", alt="").summary-decor-2
+
+  section.gallery-section 
+    .container 
+      h2.gallery-title.chars-anim Галерея
+
+      .swiper.gallery-swiper.gallery-images-block
+        .swiper-wrapper
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-1.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-2.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-3.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-4.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-5.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-6.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-7.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-8.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-9.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-10.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-11.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-12.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-13.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-14.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-15.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-16.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-17.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-18.png", alt="").gallery-image
+          .swiper-slide
+            img(src="../../assets/images/new-page/gallery-section/gallery-img-19.png", alt="").gallery-image
+
+        .swiper-button-next
+          button(type="button" aria-label="Button for next slide").gallery-next-btn
+            img(src="../../assets/images/new-page/gallery-section/arrow.svg", alt="").gallery-next-icon
+
+        .swiper-button-prev
+          button(type="button" aria-label="Button for previous slide").gallery-prev-btn
+            img(src="../../assets/images/new-page/gallery-section/arrow.svg", alt="").gallery-prev-icon
 
 
 block footer
