@@ -746,6 +746,7 @@
   padding-top: 210px;
   background-color: #f9f2eb;
   position: relative;
+  width: 100%;
 
   @media screen and (max-width: 1511px) {
     padding-top: 200px;
@@ -762,6 +763,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
+  width: 100%;
 }
 
 .about-title {
@@ -776,6 +778,7 @@
   @media screen and (max-width: 767px) {
     font-size: 48px;
     margin-bottom: 20px;
+    min-width: auto;
   }
 }
 
