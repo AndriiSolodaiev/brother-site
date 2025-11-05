@@ -685,9 +685,8 @@
   transform: translateY(-50%);
   transition: all 0.3s ease-out;
 
-  &:hover,
-  &:focus {
-    // background-color: #292925;
+  &:hover {
+    background-color: #292925;
   }
 
   @media screen and (max-width: 767px) {
@@ -733,6 +732,12 @@
 .swiper-button-disabled {
   opacity: 0;
   pointer-events: none;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: unset;
+  height: unset;
 }
 
 // ======== About section ========
