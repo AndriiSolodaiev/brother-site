@@ -27,6 +27,17 @@ block scripts
   script(defer src='./assets/scripts/new_page.bundle.js') 
 
 block content
+  section.top_section 
+    .container
+        .top_section__left
+            img.img_big(src="../../assets/images/new-page/hero-section/hero-img.png")
+        .top_section__right
+            .top_section__title.title_96_48 Riel Family<br>Style —
+            .top_section__subtitle.text_48_32 Архітектура<br>з родинними<br>цінностями
+    img.figure(src="../../assets/images/new-page/hero-section/hero-decor.png")
+    .bg
+
+
   section.concept_section 
     .container
       .concept-block
@@ -40,7 +51,6 @@ block content
           a(href="#" target="_blank").concept-link Перейти до проєкту
 
       img(src="../../assets/images/new-page/concept-section/brother-logo.svg", alt="").concept-logo
-
 
   section.advantages-section 
     .container 
@@ -81,7 +91,6 @@ block content
           .advantages-item__content-block
             h3.advantages-item__title Емоційний комфорт
             p.advantages-item__text Природа, відчуття простору, тиша й світло — простори, що „лікують“ душу.
-
 
   section.summary-section 
     .container 
@@ -149,6 +158,16 @@ block content
           button(type="button" aria-label="Button for previous slide").gallery-prev-btn
             img(src="../../assets/images/new-page/gallery-section/arrow.svg", alt="").gallery-prev-icon
 
+  section.about-section  
+    .container
+      .about-text-block
+        h2.about-title.chars-anim Про проєкт
+        a(href="#" target="_blank").about-link Перейти до проєкту
+
+    .about-image-block 
+      img(src="../../assets/images/new-page/about-section/about-buildings.png", alt="").about-build-img
+      img(src="../../assets/images/new-page/about-section/about-decor-1.png", alt="").about-decor-img-1
+      img(src="../../assets/images/new-page/about-section/about-decor-2.png", alt="").about-decor-img-2
 
 block footer
   include ../includes/footer.pug
