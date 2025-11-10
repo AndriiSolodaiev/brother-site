@@ -23,7 +23,6 @@
 .text_48_32 {
   position: relative;
   z-index: 3;
-  padding-bottom: 100px;
   color: #f2d129;
   font-size: 48px;
   font-style: normal;
@@ -31,11 +30,12 @@
   line-height: 120%;
 
   @media (max-width: 1360px) {
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    // text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   }
 
   @media (max-width: 1024px) {
     text-shadow: none;
+    padding-bottom: 100px;
   }
 
   @media (max-width: 768px) {
@@ -50,8 +50,8 @@
 
 .top_section {
   position: relative;
-  height: 100vh;
-  min-height: 670px;
+  // height: 100vh;
+  // min-height: 670px;
   padding-top: 148px;
   background-color: #0476d9;
   overflow: hidden;
@@ -108,6 +108,7 @@
       z-index: 3;
       width: 100%;
       height: 100%;
+      max-height: 625px;
       object-position: 50% 15%;
       object-fit: cover;
       border-radius: 60px;
@@ -272,17 +273,17 @@
 
 .concept-logo {
   position: relative;
-  margin-top: -88px;
+  margin-top: -68px;
 
-  aspect-ratio: 1512/317;
+  aspect-ratio: 1512/275;
 
   @media screen and (max-width: 1511px) {
-    aspect-ratio: 768/161;
-    margin-top: -38px;
+    aspect-ratio: 768/140;
+    margin-top: -35px;
   }
 
   @media screen and (max-width: 767px) {
-    aspect-ratio: 375/79;
+    aspect-ratio: 375/68;
     margin-top: -16px;
   }
 }
@@ -857,21 +858,25 @@
   top: -80px;
 
   @media screen and (max-width: 1511px) {
-    width: auto;
-    top: 0;
+    max-width: unset;
+    width: calc((692px * 100vw) / 1511px);
+    top: -80px;
     left: 0;
   }
 
   @media screen and (max-width: 1366px) {
-    height: 50vh;
+    width: calc((692px * 100vw) / 1366px);
+    top: -160px;
   }
 
   @media screen and (max-width: 767px) {
-    left: -80px;
+    width: calc((692px * 100vw) / 768px);
+    top: -100px;
+    left: -170px;
   }
 
   @media screen and (max-width: 480px) {
-    height: 40vh;
+    width: calc((692px * 50vw) / 480px);
   }
 }
 
@@ -884,20 +889,23 @@
   top: -80px;
 
   @media screen and (max-width: 1511px) {
-    top: 0px;
-    right: 0;
-    width: auto;
+    max-width: unset;
+    width: calc((692px * 100vw) / 1511px);
   }
 
   @media screen and (max-width: 1366px) {
-    height: 50vh;
+    width: calc((692px * 100vw) / 1366px);
+    top: -120px;
+    right: -150px;
   }
 
   @media screen and (max-width: 767px) {
-    right: -80px;
+    width: calc((692px * 100vw) / 767px);
+    right: -200px;
   }
 
   @media screen and (max-width: 480px) {
-    height: 40vh;
+    width: calc((692px * 100vw) / 480px);
+    right: -300px;
   }
 }
