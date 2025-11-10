@@ -72,7 +72,9 @@ const swiperSlidePhotos = new Swiper('.swiper-slide-photos', {
     },
   },
 });
-if (window.innerWidth > 768) {
+
+const sliderBgRef = document.querySelector('.slide-photos__bg');
+if (window.innerWidth > 768 && sliderBgRef) {
   const startPos = 'top +=68px';
   gsap.timeline({
     scrollTrigger: {
@@ -372,8 +374,10 @@ async function fetchGalleryImages() {
       const imageUrls = group.gallery.map(item => item.img);
       galleryImages[categoryName] = imageUrls;
     });
-
-    loadGallery('territory'); // Початкове завантаження
+    const wrapper = document.querySelector('.swiper-gallery .swiper-wrapper');
+    if (wrapper) {
+      loadGallery('territory'); // Початкове завантаження
+    }
   } catch (error) {
     console.error('Помилка при завантаженні галереї:', error);
   }
