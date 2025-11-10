@@ -273,17 +273,17 @@
 
 .concept-logo {
   position: relative;
-  margin-top: -88px;
+  margin-top: -68px;
 
-  aspect-ratio: 1512/317;
+  aspect-ratio: 1512/275;
 
   @media screen and (max-width: 1511px) {
-    aspect-ratio: 768/161;
-    margin-top: -38px;
+    aspect-ratio: 768/140;
+    margin-top: -35px;
   }
 
   @media screen and (max-width: 767px) {
-    aspect-ratio: 375/79;
+    aspect-ratio: 375/68;
     margin-top: -16px;
   }
 }
