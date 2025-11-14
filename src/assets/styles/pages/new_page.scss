@@ -186,6 +186,7 @@
   object-fit: cover;
   border-radius: 60px;
   aspect-ratio: 910/680;
+  max-height: 680px;
 
   @media screen and (max-width: 1023px) {
     aspect-ratio: 736/545;
