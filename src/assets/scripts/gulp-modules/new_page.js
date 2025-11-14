@@ -20,18 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.advantages-title, .advantages-item ').forEach(block => {
+  const isMobile = window.innerWidth < 768;
+
+  document.querySelectorAll('.advantages-item').forEach(block => {
     gsap.fromTo(
       block,
-      { y: 100, opacity: 0 },
+      { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: isMobile ? 0.4 : 0.6,
         scrollTrigger: {
           trigger: block,
-          start: 'top 80%',
+          start: 'top 85%',
+          end: 'top 60%',
           toggleActions: 'play none none none',
+          fastScrollEnd: true,
         },
       },
     );
