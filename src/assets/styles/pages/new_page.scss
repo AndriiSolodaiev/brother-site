@@ -5,7 +5,7 @@
   z-index: 3;
   margin-bottom: 40px;
   color: #f9f2eb;
-  font-size: 96px;
+  font-size: vw(96);
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
@@ -181,7 +181,7 @@
 }
 
 .concept-img {
-  width: 62%;
+  width: 60%;
   height: 100%;
   object-fit: cover;
   border-radius: 60px;
@@ -443,6 +443,7 @@
   object-fit: cover;
   aspect-ratio: 730 / 439;
   object-position: bottom center;
+  border-radius: 60px;
 
   @media screen and (max-width: 1023px) {
     aspect-ratio: 736 / 439;
@@ -450,6 +451,7 @@
 
   @media screen and (max-width: 767px) {
     aspect-ratio: 343 / 206;
+    border-radius: 20px;
   }
 }
 
