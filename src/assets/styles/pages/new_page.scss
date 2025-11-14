@@ -12,14 +12,11 @@
 
   @media screen and (max-width: 1023px) {
     font-size: 96px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 767px) {
-    margin-bottom: 20px;
     font-size: 48px;
-  }
-
-  @media (max-width: 480px) {
     margin-bottom: 12px;
   }
 }
@@ -112,7 +109,7 @@
       border-radius: 60px;
 
       @media (max-width: 1023px) {
-        height: 254px;
+        height: 353px;
       }
 
       @media (max-width: 480px) {
@@ -164,6 +161,7 @@
 .concept-block {
   border-radius: 60px;
   background: #f2d129;
+  max-height: 680px;
 
   position: relative;
   z-index: 2;
@@ -174,6 +172,7 @@
 
   @media screen and (max-width: 1023px) {
     flex-direction: column;
+    max-height: none;
   }
 
   @media screen and (max-width: 767px) {
@@ -182,7 +181,7 @@
 }
 
 .concept-img {
-  width: 60%;
+  width: 62%;
   height: 100%;
   object-fit: cover;
   border-radius: 60px;
@@ -208,6 +207,7 @@
 
   @media screen and (max-width: 1023px) {
     width: 100%;
+    padding: 60px;
   }
 
   @media screen and (max-width: 767px) {
@@ -457,6 +457,10 @@
 .advantages-item__content-block {
   padding: vw(60);
 
+  @media screen and (max-width: 1023px) {
+    padding: 60px;
+  }
+
   @media screen and (max-width: 767px) {
     padding: 28px 20px 40px;
   }
@@ -551,7 +555,7 @@
   object-fit: cover;
   display: block;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1023px) {
     object-position: 40%;
   }
 }
