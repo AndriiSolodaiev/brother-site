@@ -6,6 +6,8 @@ import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 import axios from 'axios';
 import '../animations';
 import '../section-construction';
+// import './finance.js'
+
 initSmoothScrolling();
 gsap.registerPlugin(ScrollTrigger, CustomEase, MorphSVGPlugin);
 // googleMap();
@@ -940,4 +942,52 @@ document.addEventListener('DOMContentLoaded', () => {
       playBtn.classList.remove('is-hidden');
     });
   }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const inputGroups = [
+    {
+      wrapperSelector: '.popup_selection_item__wrapper_for_select',
+      resultInputId: 'contact_way_input',
+      type: 'select',
+    },
+  ];
+
+  inputGroups.forEach(group => {
+    const wrapper = document.querySelector(group.wrapperSelector);
+    const resultInput = document.getElementById(group.resultInputId);
+
+    if (!wrapper || !resultInput) return;
+
+    let inputs;
+
+    if (group.type === 'select') {
+      inputs = wrapper.querySelectorAll('select');
+    } else {
+      inputs = wrapper.querySelectorAll(`input[type="${group.type}"]`);
+    }
+
+    function updateSelectedIds() {
+      let selectedIds;
+
+      if (group.type === 'select') {
+        selectedIds = Array.from(inputs)
+          .map(select => select.value)
+          .join(' ');
+      } else {
+        selectedIds = Array.from(inputs)
+          .filter(input => input.checked)
+          .map(input => input.id)
+          .join(' ');
+      }
+
+      resultInput.setAttribute('value', selectedIds);
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('change', updateSelectedIds);
+    });
+
+    updateSelectedIds();
+  });
 });
