@@ -1,12 +1,10 @@
 section {
   overflow-x: hidden;
-
 }
 
 // .text-anim {
 //   overflow: hidden;
 // }
-
 
 .hero {
   height: calc(100svh);
@@ -15,8 +13,9 @@ section {
   flex-direction: column;
   padding-top: 128px;
   position: relative;
-z-index: 2;
-overflow: visible;
+  z-index: 2;
+  overflow: visible;
+
   &-img {
     width: 100%;
     height: 100%;
@@ -26,11 +25,10 @@ overflow: visible;
     top: 0;
     left: 0;
     z-index: -1;
-
   }
 
   @include tablet {
-    height: calc(100vh - 226px) ;
+    height: calc(100vh - 226px);
     justify-content: flex-end;
   }
 }
@@ -50,7 +48,6 @@ overflow: visible;
     opacity: 0;
     pointer-events: none;
     position: absolute;
-
   }
 
   .title-decor {
@@ -61,7 +58,6 @@ overflow: visible;
     svg {
       width: 100%;
       height: 100%;
-
     }
 
     @include tablet {
@@ -73,24 +69,21 @@ overflow: visible;
     }
   }
 
-  &>svg{
+  & > svg {
     width: 92vw;
     height: auto;
     margin-bottom: 20px;
     path {
-      fill : $wc;
+      fill: $wc;
     }
 
     @include tablet {
       width: 67vw;
       margin-bottom: 42px;
       path {
-        fill : $second-accent-color;
+        fill: $second-accent-color;
       }
-
     }
-
-    
   }
 
   h2 {
@@ -99,13 +92,11 @@ overflow: visible;
 
     & {
       font-size: 7 vw;
-      
     }
 
     @include tablet {
       font-size: 5.2vw;
       color: $second-accent-color;
-
     }
 
     @include laptop {
@@ -126,7 +117,7 @@ overflow: visible;
   @include tablet {
     display: flex;
     flex-direction: column;
-    gap:54px;
+    gap: 54px;
     bottom: -200px;
     width: calc(100% - 40px);
     padding-bottom: 20px;
@@ -135,8 +126,6 @@ overflow: visible;
     }
   }
 }
-
-
 
 .general-btn {
   @include tiny-text;
@@ -160,30 +149,21 @@ overflow: visible;
       color: $wc;
     }
   }
-
-  
 }
 
 .info-wrap {
-  
-
   @include tablet {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
     width: calc(100% - 32px);
   }
-
- 
-
- 
 }
 
 .info-block {
-  
   border-bottom: 1px solid $border-color;
   padding: 12px 0;
-  &:first-child{
+  &:first-child {
     border-top: 1px solid $border-color;
   }
   &:last-child {
@@ -193,14 +173,14 @@ overflow: visible;
 
   @include tablet {
     border: none;
-    
+
     width: 360px;
-    padding:  0;
+    padding: 0;
     &:nth-child(2) {
       width: 360px;
     }
-    &:first-child{
-      border-top:none;
+    &:first-child {
+      border-top: none;
     }
     &:last-child {
       border: none;
@@ -230,14 +210,14 @@ overflow: visible;
 
     @include tablet {
       font-size: 16px;
-      
     }
-    a , p{
+    a,
+    p {
       display: flex;
       align-items: center;
     }
     span {
-      margin-right: 4px
+      margin-right: 4px;
     }
   }
 }
@@ -276,7 +256,7 @@ overflow: visible;
     @include tablet {
       width: 61vw;
       height: 74vw;
-      
+
       top: 0px;
       left: -20%;
     }
@@ -304,7 +284,6 @@ overflow: visible;
     .video-img {
       width: 100%;
       height: 100%;
-
     }
   }
 
@@ -322,7 +301,8 @@ overflow: visible;
     background-color: $bc;
     color: $wc;
 
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, width 0.5s ease-in-out, opacity 0.4s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, width 0.5s ease-in-out,
+      opacity 0.4s ease-in-out;
     cursor: pointer;
 
     &.is-hidden {
@@ -339,7 +319,7 @@ overflow: visible;
       color: $bc;
 
       svg path {
-        fill: $bc
+        fill: $bc;
       }
     }
   }
@@ -370,7 +350,7 @@ overflow: visible;
   .plannings-title__svg-wrap {
     position: relative;
 
-    &>svg {
+    & > svg {
       width: 43px;
       height: 41px;
       position: absolute;
@@ -395,13 +375,7 @@ overflow: visible;
       width: 70%;
     }
   }
-
-
-
-
 }
-
-
 
 .swiper-btns-wrap {
   width: 100%;
@@ -414,7 +388,7 @@ overflow: visible;
   margin-bottom: 32px;
   overflow: hidden;
   @include tablet {
-    width: fit-content
+    width: fit-content;
   }
 
   &.pc-v {
@@ -442,22 +416,24 @@ overflow: visible;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition:  background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   @include tablet {
     width: 52px;
-    background-color: #E4DED7;
-    &:hover, &:focus {
+    background-color: #e4ded7;
+    &:hover,
+    &:focus {
       background-color: $bc;
-      svg path{
+      svg path {
         fill: $wc;
       }
     }
   }
 
   &.swiper-button-disabled {
-    svg{opacity: 0.5;}
+    svg {
+      opacity: 0.5;
+    }
     pointer-events: none;
-    
   }
 
   svg {
@@ -467,14 +443,13 @@ overflow: visible;
       transition: fill 0.3s ease-in-out;
     }
   }
-
 }
 
 .swiper-button-prev {
   border-right: 1px solid $border-color;
 
   svg {
-    transform: rotate(180deg)
+    transform: rotate(180deg);
   }
 }
 
@@ -492,7 +467,7 @@ overflow: visible;
 .planning-card {
   cursor: pointer;
   border-radius: 8px;
-  border: 1px solid rgba(41, 41, 37, 0.10);
+  border: 1px solid rgba(41, 41, 37, 0.1);
   // overflow: hidden;
   position: relative;
   z-index: 2;
@@ -527,9 +502,8 @@ overflow: visible;
       @include general-text-bold;
 
       & {
-        font-size: 28px
+        font-size: 28px;
       }
-
     }
 
     p {
@@ -564,14 +538,13 @@ overflow: visible;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: $second-accent-color;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
       background-color: $second-accent-color--hover;
     }
   }
 
   @include tablet {
-
-
     &:hover,
     &:focus {
       border-bottom: none;
@@ -596,47 +569,42 @@ overflow: visible;
 
       // }
     }
-
-
   }
 }
 
 .plannings-descr {
   position: relative;
   border-radius: 12px;
-background: #4D4636;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 24px;
-padding: 160px 12px 12px;
-
-
+  background: #4d4636;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 160px 12px 12px;
 
   @include tablet {
     padding: 32px 16px 16px;
   }
-  &>svg {
+  & > svg {
     width: 173.363px;
-height: 176px;
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-top: -40px;
-@include tablet {
-  width: 23.6vw;
-  height: 24vw;
-  right: -26.865px;
-  left: auto;
-top: 50%;
-transform: translateY(-50%);
-
-}
+    height: 176px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40px;
+    @include tablet {
+      width: 23.6vw;
+      height: 24vw;
+      right: -26.865px;
+      left: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
   p {
     @include block-subtitle;
     color: $wc;
-    
+
     margin-bottom: 16px;
 
     @include tablet {
@@ -659,7 +627,6 @@ transform: translateY(-50%);
 //Slide-photos sction
 
 .slide-photos {
- 
   @include tablet {
     height: 200vh;
   }
@@ -727,7 +694,6 @@ transform: translateY(-50%);
     height: 90vh;
 
     @include tablet {
-
       margin-top: 100px;
       padding-top: 64px;
       padding-bottom: 96px;
@@ -735,13 +701,10 @@ transform: translateY(-50%);
     }
   }
 
-
-
   &__title {
     @include subtitle-text;
     color: $wc;
     margin-bottom: 32px;
-    
 
     @include tablet {
       font-size: 4.76vw;
@@ -779,12 +742,10 @@ transform: translateY(-50%);
     svg {
       width: 38px;
       height: 37px;
-      
 
       @include tablet {
         width: 4.23vw;
         height: 4.23vw;
-
       }
     }
     margin-bottom: 30px;
@@ -797,16 +758,14 @@ transform: translateY(-50%);
   &__title {
     @include title-text;
     color: $wc;
-   
   }
 
   .general-btn {
     width: 100%;
     background-color: $second-accent-color;
-    
 
     &:hover {
-      background-color: $second-accent-color--hover
+      background-color: $second-accent-color--hover;
     }
   }
 }
@@ -826,36 +785,31 @@ transform: translateY(-50%);
     position: relative;
     color: $wc;
     transition: all 0.3s ease-in-out;
-border-radius: 4px;
-border: 1px solid rgba(249, 242, 235, 0.20);
+    border-radius: 4px;
+    border: 1px solid rgba(249, 242, 235, 0.2);
     cursor: pointer;
     padding: 16px;
     &.active-slide {
       color: $bc;
       background-color: $wc;
-
-
-     
     }
 
     @include tablet {
-      &:hover, &:focus {
-        background-color: rgba(255, 255, 255, 0.20);
+      &:hover,
+      &:focus {
+        background-color: rgba(255, 255, 255, 0.2);
       }
-      &.active-slide:hover, &.active-slide:focus {
+      &.active-slide:hover,
+      &.active-slide:focus {
         background-color: $wc;
       }
-
     }
   }
-
-
-
 }
 
 .advantages-content {
   margin-bottom: 16px;
-  
+
   min-height: 45vh;
 
   @include tablet {
@@ -874,7 +828,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
       margin-bottom: 16px;
 
       @include tablet {
-        margin-bottom: 32px
+        margin-bottom: 32px;
       }
     }
 
@@ -884,7 +838,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
       margin-bottom: 16px;
 
       @include tablet {
-        margin-bottom: 20px
+        margin-bottom: 20px;
       }
     }
 
@@ -898,7 +852,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
 
     li {
       @include general-text-bold;
-      border-bottom: 1px solid rgba(249, 242, 235, 0.10);
+      border-bottom: 1px solid rgba(249, 242, 235, 0.1);
       color: $wc;
       margin-bottom: 16px;
 
@@ -940,17 +894,14 @@ border: 1px solid rgba(249, 242, 235, 0.20);
       img {
         height: auto;
       }
-
     }
 
-    &[data-id="infrastructure"] {
+    &[data-id='infrastructure'] {
       img {
         width: auto;
       }
     }
   }
-
-
 }
 
 .advantage-panel .map-wrap {
@@ -1019,13 +970,13 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   }
 }
 
-.advantage-panel[data-id="safety"] .media-part,.advantage-panel[data-id="activities"] .media-part {
+.advantage-panel[data-id='safety'] .media-part,
+.advantage-panel[data-id='activities'] .media-part {
   aspect-ratio: 0;
 }
 
 .swiper-safety {
   width: 100%;
-  
 
   @include tablet {
     width: 50%;
@@ -1035,19 +986,20 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   .swiper-btns-wrap {
     width: 100%;
     margin-top: 16px;
-    
-    border-color: #3691E1;
+
+    border-color: #3691e1;
     border-radius: 8px;
     .swiper-button-prev,
     .swiper-button-next {
       width: 100%;
-      border-color: #3691E1;
-      background-color:  #1E84DD;
-      &.swiper-button-disabled svg{
-        opacity: 0.5
+      border-color: #3691e1;
+      background-color: #1e84dd;
+      &.swiper-button-disabled svg {
+        opacity: 0.5;
       }
-      &:hover, &:focus {
-        background-color:  $wc;
+      &:hover,
+      &:focus {
+        background-color: $wc;
         svg path {
           fill: $bc;
         }
@@ -1056,8 +1008,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   }
 
   .swiper-slide {
-
-    aspect-ratio: 1/ 1.29
+    aspect-ratio: 1/ 1.29;
   }
 }
 
@@ -1070,32 +1021,31 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   //   margin-left: auto;
   // }
   .swiper-wrapper {
-    height:fit-content;
+    height: fit-content;
   }
   .swiper-btns-wrap {
     width: 100%;
     margin-top: 16px;
-    
-    border-color: #3691E1;
+
+    border-color: #3691e1;
     border-radius: 8px;
     .swiper-button-prev,
     .swiper-button-next {
       width: 100%;
-      border-color: #3691E1;
-      background-color:  #1E84DD;
-      &.swiper-button-disabled svg{
-        opacity: 0.5
+      border-color: #3691e1;
+      background-color: #1e84dd;
+      &.swiper-button-disabled svg {
+        opacity: 0.5;
       }
-      &:hover, &:focus {
-        background-color:  $wc;
+      &:hover,
+      &:focus {
+        background-color: $wc;
         svg path {
           fill: $bc;
         }
       }
     }
   }
-
-  
 }
 .params {
   padding-top: 72px;
@@ -1110,9 +1060,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     @include tablet {
       display: flex;
       gap: 20px;
-
     }
-
   }
 
   &-list {
@@ -1120,13 +1068,13 @@ border: 1px solid rgba(249, 242, 235, 0.20);
       margin-bottom: 32px;
 
       @include tablet {
-        margin-bottom: 0
+        margin-bottom: 0;
       }
     }
 
     li {
       @include tiny-text;
-      border-bottom: 1px solid rgba(249, 242, 235, 0.10);
+      border-bottom: 1px solid rgba(249, 242, 235, 0.1);
       color: $wc;
       margin-bottom: 32px;
 
@@ -1156,7 +1104,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     object-fit: cover;
   }
 
-  &>svg {
+  & > svg {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -1168,14 +1116,12 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     @include tablet {
       width: 32vw;
       height: 30vw;
-
     }
   }
 
   @include tablet {
     aspect-ratio: 1/0.58;
     height: auto;
-
   }
 }
 
@@ -1201,7 +1147,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   }
 
   &-card {
-    background-image: url("../images/parking/parking-bg1.jpg");
+    background-image: url('../images/parking/parking-bg1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1211,40 +1157,34 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     top: 80px;
     left: 0;
     z-index: 3;
-    
-    
+
     border-radius: 8px;
     padding: 32px 16px;
 
     .icon--brother {
       display: none;
       @include tablet {
-        
         display: block;
         position: absolute;
         top: calc(-6vw * 1.22);
         left: 0;
         width: 6vw;
-        height: calc(6vw * 1.22)
+        height: calc(6vw * 1.22);
       }
     }
     &.safe {
-      background-image: url("../images/parking/parking-bg2.jpg");
-      
+      background-image: url('../images/parking/parking-bg2.jpg');
+
       .parking-card__img-wrap {
-        
-          margin-top: 64px;
-        
-  
+        margin-top: 64px;
+
         @include tablet {
-         
-            margin-top: 0;
-          
+          margin-top: 0;
         }
       }
       .parking-card__gen-text {
         @include general-text;
-        
+
         margin-top: auto;
       }
     }
@@ -1299,17 +1239,13 @@ border: 1px solid rgba(249, 242, 235, 0.20);
         @include tablet {
           margin-top: auto;
         }
-
       }
-
-
     }
 
     &__descr {
       @include block-subtitle;
       color: $bc;
       margin-bottom: 32px;
-
 
       @include tablet {
         margin-bottom: 24px;
@@ -1319,7 +1255,6 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     &__gen-text {
       @include general-text;
       color: $bc;
-      
     }
 
     &__img-wrap {
@@ -1328,7 +1263,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
       border-radius: 4px;
       overflow: hidden;
       margin-top: 32px;
-      
+
       img {
         width: 100%;
         height: 100%;
@@ -1341,7 +1276,6 @@ border: 1px solid rgba(249, 242, 235, 0.20);
         aspect-ratio: 1 / 1.32;
         border-radius: 8px;
         margin-top: 0;
-        
       }
     }
   }
@@ -1350,7 +1284,6 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     width: 100%;
     background-color: $second-accent-color;
     margin-top: 16px;
-    
 
     @include tablet {
       margin-top: 20px;
@@ -1362,7 +1295,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
   }
 }
 
-//gallery 
+//gallery
 .gallery-title {
   @include title-text;
   margin-bottom: 34px;
@@ -1381,7 +1314,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     padding-bottom: 80px;
   }
 
-  .swiper-btns-wrap{
+  .swiper-btns-wrap {
     transition: all 0.3s ease-in-out;
     &.hidden {
       opacity: 0;
@@ -1401,7 +1334,7 @@ border: 1px solid rgba(249, 242, 235, 0.20);
 
 .swiper-gallery-ctrls {
   position: relative;
-  
+
   margin-bottom: 32px;
 
   @include tablet {
@@ -1421,13 +1354,11 @@ border: 1px solid rgba(249, 242, 235, 0.20);
     cursor: pointer;
     padding: 16px;
     transition: all 0.3s ease-in-out;
-border-radius: 4px;
-border: 1px solid rgba(41, 41, 37, 0.20);
+    border-radius: 4px;
+    border: 1px solid rgba(41, 41, 37, 0.2);
     &.active-slide {
       background-color: $bc;
       color: $wc;
-
-
 
       // &::after {
       //   content: "";
@@ -1442,19 +1373,14 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     }
 
     @include tablet {
-     
-
       &:hover {
-        background: rgba(41, 41, 37, 0.10);
+        background: rgba(41, 41, 37, 0.1);
       }
       &.active-slide:hover {
         background: rgba(41, 41, 37);
       }
     }
   }
-
-
-
 }
 
 .swiper-gallery {
@@ -1495,8 +1421,7 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     padding-bottom: 80px;
   }
 
-  ;
-  .swiper-btns-wrap{
+  .swiper-btns-wrap {
     &.hidden {
       opacity: 0;
     }
@@ -1510,9 +1435,10 @@ border: 1px solid rgba(41, 41, 37, 0.20);
   }
 }
 
-.swiper-progress-queue-ctrls, .swiper-progress-month-ctrls {
-   position: relative;
-  
+.swiper-progress-queue-ctrls,
+.swiper-progress-month-ctrls {
+  position: relative;
+
   margin-bottom: 32px;
 
   @include tablet {
@@ -1532,13 +1458,11 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     cursor: pointer;
     padding: 16px;
     transition: all 0.3s ease-in-out;
-border-radius: 4px;
-border: 1px solid rgba(41, 41, 37, 0.20);
+    border-radius: 4px;
+    border: 1px solid rgba(41, 41, 37, 0.2);
     &.active-slide {
       background-color: $bc;
       color: $wc;
-
-
 
       // &::after {
       //   content: "";
@@ -1553,19 +1477,14 @@ border: 1px solid rgba(41, 41, 37, 0.20);
     }
 
     @include tablet {
-     
-
       &:hover {
-        background: rgba(41, 41, 37, 0.10);
+        background: rgba(41, 41, 37, 0.1);
       }
       &.active-slide:hover {
         background: rgba(41, 41, 37);
       }
     }
   }
-
-
-
 }
 
 .swiper-progress-gallery {
@@ -1591,7 +1510,7 @@ border: 1px solid rgba(41, 41, 37, 0.20);
 .queue-dates {
   padding: 16px;
   border-radius: 8px;
-background: #4D4636;
+  background: #4d4636;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1601,7 +1520,7 @@ background: #4D4636;
     padding-bottom: 8px;
     border-bottom: 1px solid #f9f2eb36;
   }
-  .date-title{
+  .date-title {
     @include tiny-text;
     color: $wc;
     margin-bottom: 8px;
@@ -1626,12 +1545,12 @@ background: #4D4636;
   }
   .swiper-slide {
     border-radius: 8px;
-border: 1px solid rgba(41, 41, 37, 0.10);
-background: var(--White, #F9F2EB);
-padding: 16px;
-display: flex;
-  flex-direction: column;
-  height: auto ;    
+    border: 1px solid rgba(41, 41, 37, 0.1);
+    background: var(--White, #f9f2eb);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
     .percents-title {
       @include tiny-text;
       margin-bottom: 4px;
@@ -1639,17 +1558,16 @@ display: flex;
     .percent-value {
       margin-top: auto;
       color: $bc;
-font-size: 48px;
-font-weight: 700;
-margin-bottom: 16px;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
-    .percent-line{
+    .percent-line {
       height: 4px;
-      background: rgba(41, 41, 37, 0.10);
+      background: rgba(41, 41, 37, 0.1);
       width: 100%;
-
     }
-    .percent-fill{
+    .percent-fill {
       height: 100%;
       background-color: $second-accent-color;
     }
@@ -1671,7 +1589,7 @@ margin-bottom: 16px;
     &:nth-child(2),
     &:nth-child(6) {
       p {
-        color: $wc
+        color: $wc;
       }
     }
 
@@ -1694,16 +1612,10 @@ margin-bottom: 16px;
       transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
     }
   }
-
-
-
 }
-
-
 
 .riel-container-pc {
   display: none;
-
 
   @include tablet {
     display: flex;
@@ -1726,7 +1638,6 @@ margin-bottom: 16px;
         max-width: 10vw;
         opacity: 0;
         color: $bc;
-
       }
 
       svg {
@@ -1777,16 +1688,13 @@ margin-bottom: 16px;
         width: 30%;
       }
     }
-
-
   }
-
 }
 
 .swiper-scrollbar {
   position: relative !important;
   background-color: transparent;
- left: 0 !important; 
+  left: 0 !important;
   margin-top: 12px;
   // margin-bottom: 8px;
   @include tablet {
@@ -1796,12 +1704,11 @@ margin-bottom: 16px;
 .swiper-scrollbar-drag {
   background-color: rgba(249, 242, 235, 0.314);
   height: 4px;
-
 }
 
 .terms {
   padding-top: 36px;
-  padding-bottom:72px;
+  padding-bottom: 72px;
 
   @include tablet {
     padding-top: 80px;
@@ -1811,10 +1718,9 @@ margin-bottom: 16px;
   .general-btn {
     width: 100%;
     background-color: $second-accent-color;
-    
 
     &:hover {
-      background-color: $second-accent-color--hover
+      background-color: $second-accent-color--hover;
     }
   }
 
@@ -1826,7 +1732,6 @@ margin-bottom: 16px;
       display: flex;
       align-items: baseline;
       gap: 40px;
-
     }
   }
 
@@ -1847,7 +1752,7 @@ margin-bottom: 16px;
     &.active {
       pointer-events: none;
       opacity: 1;
-      order: -1
+      order: -1;
     }
 
     @include tablet {
@@ -1858,7 +1763,6 @@ margin-bottom: 16px;
       }
     }
   }
-
 
   &__content {
     margin-bottom: 16px;
@@ -1894,8 +1798,7 @@ margin-bottom: 16px;
       margin-bottom: 12px;
       font-weight: 700;
 
-      &>svg {
-
+      & > svg {
         margin-bottom: 8px;
         display: block;
       }
@@ -1908,7 +1811,6 @@ margin-bottom: 16px;
     ul,
     li {
       list-style-type: disc;
-
     }
 
     ul {
@@ -1920,7 +1822,6 @@ margin-bottom: 16px;
       margin-bottom: 4px;
     }
 
-
     @include tablet {
       margin-bottom: 20px;
 
@@ -1930,8 +1831,7 @@ margin-bottom: 16px;
         display: flex;
         align-items: center;
 
-
-        &>svg {
+        & > svg {
           margin-right: 10px;
           display: inline;
           margin-bottom: 0;
@@ -1950,8 +1850,6 @@ margin-bottom: 16px;
         height: 100%;
         display: flex;
         flex-direction: column;
-
-
       }
 
       span {
@@ -1967,13 +1865,12 @@ margin-bottom: 16px;
     ul,
     li {
       list-style-type: none;
-      padding: 0
+      padding: 0;
     }
   }
-
 }
 
-//documents 
+//documents
 .documents {
   padding-top: 36px;
   padding-bottom: 72px;
@@ -2002,11 +1899,10 @@ margin-bottom: 16px;
       flex-direction: row;
       flex-wrap: wrap;
     }
-
   }
 
   &__item {
-    border-bottom: 1px solid rgba(41, 41, 37, 0.10);
+    border-bottom: 1px solid rgba(41, 41, 37, 0.1);
     padding-bottom: 16px;
     width: 100%;
 
@@ -2039,13 +1935,10 @@ margin-bottom: 16px;
     h3 {
       @include block-subtitle;
 
-
       @include tablet {
         font-size: 2.11vw;
-
       }
     }
-
 
     &.hidden {
       display: none;
@@ -2065,7 +1958,7 @@ margin-bottom: 16px;
 
 .more-btn {
   margin-top: 32px;
-  border: 1px solid rgba(41, 41, 37, 0.10);
+  border: 1px solid rgba(41, 41, 37, 0.1);
   padding: 20px;
   @include general-text;
   display: flex;
@@ -2089,15 +1982,13 @@ margin-bottom: 16px;
     display: none;
   }
 
-
-
   @include tablet {
     display: none;
   }
 }
 
 .about {
-  background-color: #1C3543;
+  background-color: #1c3543;
   padding-bottom: 32px;
   padding-top: 32px;
   position: relative;
@@ -2121,7 +2012,7 @@ margin-bottom: 16px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 20px
+      right: 20px;
     }
   }
 
@@ -2130,7 +2021,8 @@ margin-bottom: 16px;
     color: $wc;
     margin-bottom: 12px;
 
-    @include tablet {}
+    @include tablet {
+    }
   }
 
   &__subtitle {
@@ -2155,19 +2047,15 @@ margin-bottom: 16px;
       padding-bottom: 8px;
       border-bottom: 1px solid #f9f2eb10;
       color: $wc;
-
-
     }
 
     @include tablet {
       width: 50%;
     }
-
-
   }
 
   .general-btn {
-    background-color: #66D432;
+    background-color: #66d432;
     width: 100%;
 
     &:hover {
@@ -2176,14 +2064,13 @@ margin-bottom: 16px;
 
     color: $bc;
 
-
     svg {
       margin-right: 8px;
     }
   }
 }
 
-.news{
+.news {
   .gallery-title {
     margin-bottom: 32px;
     @include tablet {
@@ -2194,24 +2081,24 @@ margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     gap: 32px;
-@include tablet {
+    @include tablet {
       flex-direction: row;
       column-gap: 20px;
       flex-wrap: wrap;
-
     }
   }
-  &__link{
+  &__link {
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding-bottom: 16px;
-    border-bottom: 1px solid rgba(41, 41, 37, 0.10);
+    border-bottom: 1px solid rgba(41, 41, 37, 0.1);
     @include tablet {
       gap: 16px;
       padding-bottom: 20px;
-      width: calc((100% - 20px) / 2 );
-      &:hover, &:focus {
+      width: calc((100% - 20px) / 2);
+      &:hover,
+      &:focus {
         .news__title {
           text-decoration: underline;
         }
@@ -2219,17 +2106,17 @@ margin-bottom: 16px;
     }
   }
 
-  &__data{
+  &__data {
     @include tiny-text;
     line-height: 177%;
-  } 
+  }
 
   &__title {
     @include block-subtitle;
     @include tablet {
       font-size: 2.11vw;
       transition: text-decoration 0.3s ease-in-out;
-    } 
+    }
   }
 }
 
