@@ -236,6 +236,16 @@ export default class FormMonster {
           this.watchedState.status = 'loading';
           const formData = new FormData(this.elements.$form);
           formData.append('action', 'app');
+
+          const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+          UTM_KEYS.forEach(key => {
+            const value = sessionStorage.getItem(key);
+            if (value) {
+              formData.set(key, value);
+            }
+          });
+
           for (let [key, value] of formData.entries()) {
             console.log(`${key}:`, value);
           }

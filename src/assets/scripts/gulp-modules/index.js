@@ -13,6 +13,17 @@ gsap.registerPlugin(ScrollTrigger, CustomEase, MorphSVGPlugin);
 // googleMap();
 
 document.addEventListener('DOMContentLoaded', () => {
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+  const params = new URLSearchParams(window.location.search);
+
+  UTM_KEYS.forEach(key => {
+    const value = params.get(key);
+    if (value && !sessionStorage.getItem(key)) {
+      sessionStorage.setItem(key, value);
+    }
+  });
+
   const video = document.querySelector('.video');
   const playBtn = document.querySelector('.play-btn');
 
