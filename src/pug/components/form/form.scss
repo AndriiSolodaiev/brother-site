@@ -16,20 +16,12 @@
     pointer-events: none;
   }
 }
-.form {
-}
 .modal-form {
   position: absolute;
   // max-height: 90vh;
   // top: 50%;
   // left: 50%;
   // transform: translate(-50%, -50%);
-  left: 5vw;
-  top: 10vh;
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
-  height: 80vh;
   // max-height: 90vh;
   // top: 50%;
   // left: 50%;
@@ -85,20 +77,6 @@
   }
 }
 
-.form-wrapper {
-  height: 80%;
-  .form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    select {
-      display: flex;
-      justify-content: space-between;
-      width: 250px;
-    }
-  }
-}
-
 .form-title {
   @include subtitle-text;
   color: $bc;
@@ -128,9 +106,6 @@
   height: 48px;
   border-radius: 4px;
   border: 1px solid rgba(41, 41, 37, 0.2);
-  height: 48px;
-  border-radius: 4px;
-  border: 1px solid rgba(41, 41, 37, 0.2);
 
   svg {
     width: 24px;
@@ -149,11 +124,6 @@
   gap: 24px;
   width: 100%;
   margin-bottom: 48px;
-
-  h2 {
-  }
-  h2 {
-  }
 
   p {
     @include general-text;
@@ -178,12 +148,10 @@
     margin-bottom: 100px;
   }
 }
-[data-status='field--error'] .form-field__input {
-  border-color: #d03d35;
+
 [data-status='field--error'] .form-field__input {
   border-color: #d03d35;
   &::placeholder {
-    color: #d03d35;
     color: #d03d35;
   }
 }
@@ -194,23 +162,12 @@
     width: 100%;
     background-color: $second-accent-color;
 
-
     border-radius: 0 0 12px 12px;
 
     &:hover,
     &:focus {
       background-color: $second-accent-color--hover;
     }
-  }
-
-  @include laptop {
-  }
-  @include laptop {
-  }
-
-  @include desktop {
-  }
-  @include desktop {
   }
 }
 
@@ -226,11 +183,6 @@
     padding: 20px;
     padding-bottom: 20px;
   }
-
-  @include laptop {
-  }
-  @include laptop {
-  }
 }
 
 .input-title {
@@ -240,11 +192,6 @@
 
   @include tablet {
     font-size: 1.19vw;
-  }
-
-  @include laptop {
-  }
-  @include laptop {
   }
 }
 
@@ -276,21 +223,6 @@
     color: $bc;
     opacity: 0.7;
   }
-
-  &:focus {
-  }
-  &:focus {
-  }
-
-  @include tablet {
-  }
-  @include tablet {
-  }
-
-  @include laptop {
-  }
-  @include laptop {
-  }
 }
 
 .text-input {
@@ -318,47 +250,24 @@
 .form-area-wrap {
   [data-field-area-from] .form-field__input {
     border-radius: 4px 0 0 4px;
-  [data-field-area-from] .form-field__input {
-    border-radius: 4px 0 0 4px;
     border-right: none;
   }
-  [data-field-area-to] .form-field__input {
-    border-radius: 0 4px 4px 0;
+
   [data-field-area-to] .form-field__input {
     border-radius: 0 4px 4px 0;
   }
 }
 .form__button-wrapper {
   // margin-top: 20px;
-
-  @include tablet {
-  }
-  @include tablet {
-  }
-
-  @include laptop {
-  }
-  @include laptop {
-  }
-
-  @include desktop {
-  }
-  @include desktop {
-  }
 }
 
 .submit-btn__text {
-  @include laptop {
-  }
-  @include laptop {
-  }
 }
 
 .iti__flag {
   background-image: url('../images/libs/flags.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .iti__flag {
     background-image: url('../images/libs/flags@2x.png');
@@ -522,11 +431,8 @@
   .irs-max {
     background-color: transparent;
     @include tiny-text;
-    @include tiny-text;
   }
 
-  .irs-to,
-  .irs-from,
   .irs-to,
   .irs-from,
   .irs-single {
@@ -536,7 +442,6 @@
     top: 40px;
 
     &::before {
-      border-top-color: transparent;
       border-top-color: transparent;
     }
   }
@@ -561,7 +466,6 @@
   cursor: pointer;
   @include tiny-text;
 
-  input[type='checkbox'] {
   input[type='checkbox'] {
     display: none;
   }
@@ -591,7 +495,6 @@
   }
 
   input[type='checkbox']:checked + .checkbox-circle {
-  input[type='checkbox']:checked + .checkbox-circle {
     background-color: $bc;
 
     &::after {
@@ -617,7 +520,6 @@
 
     &::after {
       content: 'м²';
-      content: 'м²';
       // pointer-events: none;
       position: absolute;
       z-index: 2;
@@ -642,12 +544,10 @@
   cursor: pointer;
 
   input:checked + .custom-radio {
-  input:checked + .custom-radio {
     background-color: $wc;
     border-color: $bc;
   }
 
-  input:checked + .custom-radio::after {
   input:checked + .custom-radio::after {
     opacity: 1;
   }
@@ -676,4 +576,3 @@
     transition: 0.2s;
   }
 }
-
